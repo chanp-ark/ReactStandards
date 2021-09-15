@@ -89,8 +89,7 @@ import { Route, useParams } from 'react-router-dom'
 # JS & JSX Operators
 
 Use `Boolean()` over `!!` for explicit readability.
-
-[!! vs. Boolean()](https://gist.github.com/arthurvi/66cb1e2bcfc92f99f465e0db04264367)
+See this article for mor edetails - [!! vs. Boolean()](https://gist.github.com/arthurvi/66cb1e2bcfc92f99f465e0db04264367)
 
 ---
 
@@ -197,19 +196,13 @@ if (typeof window !== undefined && !!window.location && !!window.location.href) 
 }
 ```
 
-See below for more details. Note that we do not follow all 21 best practices in the article.
-
-[21 Best Practices for a Clean React Project](https://betterprogramming.pub/21-best-practices-for-a-clean-react-project-df788a682fb)
-
 ---
 
 # Function Components
 
 Classes in JavaScript are not pure Classes. They are a pseudo-class, just *syntactic sugar*. Although syntactically identical to the class signature of other languages, JavaScript classes are intrinsically different. When `Class` is used, JavaScript runs `Object` methods under-the-hood to create that "class."
 
-See the blog for more about under-the-hood for `Class`
-
-[How JavaScript Classes Work Under the Hood](https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d)
+See this blog for more about under-the-hood for `Class` - [How JavaScript Classes Work Under the Hood](https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d)
 
 For all components, we will use function components over Class ***in order to use Hooks***. 
 
@@ -224,9 +217,7 @@ The following reasons are from [React documentation](https://reactjs.org/docs/ho
 3. Classes confuse both people and machines
     - Hooks let you use more of React’s features without classes.
 
-See the documentation for more details about hooks:
-
-[Introducing Hooks - React](https://reactjs.org/docs/hooks-intro.html)
+See this documentation for more details about hooks - [Introducing Hooks - React](https://reactjs.org/docs/hooks-intro.html)
 
 ---
 
@@ -245,20 +236,20 @@ For every other cases, we use a ***function declaration***. The reason for using
 
 ```jsx
 function Plan() { 
-	const [state, setState] = React.useState(() => window.localStorage('state'))
+const [state, setState] = React.useState(() => window.localStorage('state'))
 	
-	function handleClick(event) {
-		// handle the click event
-	}
+function handleClick(event) {
+// handle the click event
+}
 
-	return (
-		<>
-			<PlanContainer />
-			<Button
-				onClick={handleClick}
-			/>
-		</>
-	)
+return (
+	<>
+		<PlanContainer />
+		<Button
+			onClick={handleClick}
+		/>
+	</>
+)
 }
 ```
 
@@ -410,16 +401,10 @@ This is a question of using `async/await` vs. `then/catch` for making API calls.
 Both methods do the same thing, but using `async/await` gives better flow control and leads to cleaner code and keeps it reading synchronously. 
 
 In addition, we want to avoid *callback hell* that can potentially come with `then/catch`
-
-See the video below for more about using `async/await`
-
-[Async + Await in JavaScript, talk from Wes Bos](https://www.youtube.com/watch?v=DwQJ_NPQWWo)
+*See this video for more about using `async/await` - [Async + Await in JavaScript, talk from Wes Bos](https://www.youtube.com/watch?v=DwQJ_NPQWWo)*
 
 When making multiple, independent API calls, we can batch them together by using `Promise.all` with `async/await`
-
-See the article below for more details:
-
-[Async Await vs then/catch](https://medium.com/@dio.hamidou/async-await-vs-then-catch-4f64d42e6392)
+*See this article for more details - [Async Await vs then/catch](https://medium.com/@dio.hamidou/async-await-vs-then-catch-4f64d42e6392)*
 
 **Do:**
 
@@ -471,9 +456,7 @@ if (!stateFromParent) {
 }
 ```
 
-See the article below for more details:
-
-[Use ternaries rather than && in JSX](https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx)
+See the article for more details - [Use ternaries rather than && in JSX](https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx)
 
 `Boolean(array.length) && <Component />` or `array.length > 0 && <Component />` can solve this issue but we prefer to be *explicit but verbose* for readability and maintainability. 
 
@@ -570,34 +553,6 @@ function Plan ({
 
 # Naming
 
-We follow the naming convention set in the following guide:
-
-[GitHub - kettanaito/naming-cheatsheet: Comprehensive language-agnostic guidelines on variables naming. Home of the A/HC/LC pattern.](https://github.com/kettanaito/naming-cheatsheet)
+We follow the naming convention set in this guide - [GitHub - kettanaito/naming-cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
 
 ---
-
-# ESLint Rules
-
-In the following ESLint configuration, the basis for rules and styles is `airbnb-base` plus rules for Cypress, imports, Jest, JSDocs, and styles.
-
-To set up ESLint, run: 
-
-`yarn --save-dev @youversion/eslint-config eslint@6.8.0 eslint-plugin-sort-keys-fix prettier`
-
-`.eslintrc` 
-
-```jsx
-module.exports = {
-  extends: ['@youversion'],
-  plugins: ['sort-keys-fix'],
-  rules: {
-    'jsdoc/require-jsdoc': 'off',
-    'jsdoc/require-file-overview': 'off',
-    'sort-keys-fix/sort-keys-fix': 'warn',
-  },
-}
-```
-
-This project is open to discussions for rule changes.
-
-[Sign in](https://in.thewardro.be/web/web-tools/-/tree/main/packages/eslint-config/src)
