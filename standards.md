@@ -242,7 +242,7 @@ function Plan() {
    // handle the click event
   }
 
- return (
+  return (
     <>
       <PlanContainer />
       <Button
@@ -257,26 +257,24 @@ function Plan() {
 
 ```jsx
 const Plan = () => { 
-	const [state, setState] = React.useState(window.localStorage.getItem('state'))
+  const [state, setState] = React.useState(window.localStorage.getItem('state'))
 	
-	const handleClick = (event) => {
-		// handle the click event
-	}
+  const handleClick = (event) => {
+    // handle the click event
+  }
 
-	return (
-		<>
-			<PlanContainer />
-			<Button
-				onClick={handleClick}
-			/>
-		</>
-	)
+  return (
+    <>
+      <PlanContainer />
+      <Button
+        onClick={handleClick}
+      />
+    </>
+  )
 }
 ```
 
-See the article below for more details:
-
-[Function forms](https://kentcdodds.com/blog/function-forms)
+See this article below for more details - [Function forms](https://kentcdodds.com/blog/function-forms)
 
 ---
 
@@ -293,28 +291,28 @@ Here is an example of how Hooks simplify code in reading, writing, and understan
 ```jsx
 // With Hooks
 React.useEffect(()=>{
-	organizationMemberships.load({organization_id: orgId})
+  organizationMemberships.load({organization_id: orgId})
 }, [orgId])
 
 // Without Hooks
 componentWillMount() {
-	const {
-		orgId,
-		actions: { organizationMemberships}
-	} = this.props
-	organizationMemberships.load({ organization_id: orgId })
+  const {
+    orgId,
+    actions: { organizationMemberships}
+  } = this.props
+  organizationMemberships.load({ organization_id: orgId })
 }
 
 componentWillReceiveProps(nextProps) {
-	// When organization is changed, reload users
-	const {
-		orgId,
-		actions: { organizationMemberships }	
-	} = this.props
+  // When organization is changed, reload users
+  const {
+    orgId,
+    actions: { organizationMemberships }	
+  } = this.props
 
-	if (nextProps.orgId && nextProps.orgId !== orgId) {
-		organizatioNMemberships.load({ organization_id: orgId })
-	}
+  if (nextProps.orgId && nextProps.orgId !== orgId) {
+    organizatioNMemberships.load({ organization_id: orgId })
+  }
 }
 ```
 
@@ -324,9 +322,9 @@ componentWillReceiveProps(nextProps) {
 import React from 'react'
 
 function App() {
-	const [plans, setPlans] = React.useState({})
+  const [plans, setPlans] = React.useState({})
 
-	// return App
+  // return App
 }
 ```
 
@@ -336,9 +334,9 @@ function App() {
 import React, { useState } from 'react' // Don't import useState here
 
 function App() {
-	const [plans, setPlans] = useState({})
+  const [plans, setPlans] = useState({})
 
-	// return App
+  // return App
 }
 ```
 
@@ -371,7 +369,7 @@ function MyComponent() {
       }
     }
     
-    loadData()
+  loadData()
   }, [path]) // Effect will run on initial load, and when `path` changes.
   
   if (loadingStatus === statusTypes.PENDING) {
@@ -384,10 +382,10 @@ function MyComponent() {
     
   return (
     <>
-	    { data.length ? data.map(/* do stuff here */) : 'no data' }
+      { data.length ? data.map(/* do stuff here */) : 'no data' }
     </>
   )
-}\
+}
 ```
 
 ---
@@ -410,13 +408,13 @@ When making multiple, independent API calls, we can batch them together by using
 
 ```jsx
 async function handleSubmit() {
-	try {
-		const planResponse = await API.get({path, token})
-		// planResponse can be used anywhere following inside this `try` block
-	} catch(error){
+  try {
+    const planResponse = await API.get({path, token})
+    // planResponse can be used anywhere following inside this `try` block
+  } catch(error){
     // Handle error as needed.
-		console.error(error.message)
-	}
+    console.error(error.message)
+  }
 }
 ```
 
@@ -424,15 +422,15 @@ async function handleSubmit() {
 
 ```jsx
 function handleSubmit() {
-	fetch(path, options)
-		.then(data => data.json)
-		.then(planResponse => {
-			// planResponse is only accessible inside this `then` block
-		})
-		.catch(error => {
+  fetch(path, options)
+    .then(data => data.json)
+    .then(planResponse => {
+      // planResponse is only accessible inside this `then` block
+    })
+    .catch(error => {
       // Handle error as needed.
-			console.error(error.message)
-		})
+      console.error(error.message)
+    })
 }
 ```
 
@@ -452,7 +450,7 @@ For cases when the first expression is `array.length` which evaluates to `0`, th
 
 ```jsx
 if (!stateFromParent) {
-	return null
+  return null
 }
 ```
 
@@ -465,31 +463,31 @@ See the article for more details - [Use ternaries rather than && in JSX](https:/
 ```jsx
 // best
 function Plan () {
-	if (!plan.id) {
-		return <LoaderOverlay />
-	}
+  if (!plan.id) {
+    return <LoaderOverlay />
+  }
 	
-	return (
-		<PlanDays />
-	)
+  return (
+    <PlanDays />
+  )
 }
 
 function PlanDays(planDays){ // In its own file.
-	if (planDays.length === 0) {
-		return null
-	}
-	// return component
+  if (planDays.length === 0) {
+    return null
+  }
+  // return component
 }
 
 // good as a last resort
 function Plan () {
-	return (
-		{ 
-			array.length 
-				?	<PlanDays />
-				: null
-		}
-	)
+  return (
+    { 
+      array.length 
+        ?	<PlanDays />
+        : null
+    }
+  )
 }
 
 ```
@@ -499,7 +497,7 @@ function Plan () {
 ```jsx
 
 return (
-		planDays.length && <PlanDays /> // Don't use && for returning component
+  planDays.length && <PlanDays /> // Don't use && for returning component
 )
 ```
 
@@ -513,19 +511,19 @@ Keys in objects and props should always be ordered alphabetically (including in 
 
 ```jsx
 function Plan ({
-	categories,
-	comments,
-	organization,
-	planId,
-	user
+  categories,
+  comments,
+  organization,
+  planId,
+  user
 }) { 
 
-	return (
-		<PlanContainer
-			class={classes.plan}
-			days={plan.days}
-		/>
-	)
+  return (
+    <PlanContainer
+      class={classes.plan}
+      days={plan.days}
+    />
+  )
 }
 ```
 
@@ -533,19 +531,19 @@ function Plan ({
 
 ```jsx
 function Plan ({
-	user,
-	categories,
-	planId,
-	comments,
-	organization,
+  user,
+  categories,
+  planId,
+  comments,
+  organization,
 }) { 
 
-	return (
-		<PlanContainer
-			days={plan.days}
-			class={classes.plan}
-		/>
-	)
+  return (
+    <PlanContainer
+      days={plan.days}
+      class={classes.plan}
+    />
+  )
 }
 ```
 
