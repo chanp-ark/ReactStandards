@@ -1,7 +1,10 @@
 *“All code in any code-base should look like a single person typed it, no matter how many people contributed.” -Confucius*
 
 # **Table of Contents**
-1. [Imports](#Imports)
+1. [Introduction](#Introduction)
+2. [Imports](#Imports)
+3. [JS/JSX Operators](#JS/JSXOperators)
+4. [Function Components](#FunctionComponents)
 
 # Introduction
 
