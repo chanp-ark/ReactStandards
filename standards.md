@@ -234,17 +234,17 @@ For every other cases, we use a ***function declaration***. The reason for using
 
 **Do:**
 
-```
+```jsx
 function Plan() { 
-	const [state, setState] = React.useState(() => window.localStorage('state'))
+&nbsp;const [state, setState] = React.useState(() => window.localStorage('state'))
 	
-	function handleClick(event) {
-		// handle the click event
-	}
+&nbsp;function handleClick(event) {
+&nbsp;&nbsp;// handle the click event
+&nbsp;}
 
-	return (
-		<>
-			<PlanContainer />
+&nbsp;return (
+&nbsp;&nbsp;<>
+&nbsp;&nbsp;&nbsp;<PlanContainer />
 			<Button
 				onClick={handleClick}
 			/>
