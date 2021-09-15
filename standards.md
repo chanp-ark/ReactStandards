@@ -16,11 +16,7 @@
 
 The overarching princple of these React Standards is AHA, which stands for "Avoid Hasty Abstraction." This principle prefers duplication over wrong abstractions because duplication is far cheaper than wrong abstraction.
 
-See the blogs below for more about AHA:
-
-[AHA Programming 💡](https://kentcdodds.com/blog/aha-programming)
-
-[The Wrong Abstraction - Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
+*See these articles for more about AHA - [AHA Programming 💡](https://kentcdodds.com/blog/aha-programming), [The Wrong Abstraction - Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)*
 
 ### Core Values
 
@@ -34,9 +30,7 @@ See the blogs below for more about AHA:
 
         *"It’s desirable to reduce the odds that a future change (or a conflicting change in another branch) introduces a non-obvious bug and to facilitate finding bugs, because we spend far more time extending and debugging than implementing."*
 
-See the article below for more details about coding guidlines:
-
-[Bungie C++ Guidelines & Razors > News | Bungie.net](https://www.bungie.net/en/News/Article/50666)
+*See this article for more details about coding guidlines - [Bungie C++ Guidelines & Razors > News | Bungie.net](https://www.bungie.net/en/News/Article/50666)*
 
 ---
 
@@ -89,7 +83,8 @@ import { Route, useParams } from 'react-router-dom'
 # JS & JSX Operators
 
 Use `Boolean()` over `!!` for explicit readability.
-See this article for mor edetails - [!! vs. Boolean()](https://gist.github.com/arthurvi/66cb1e2bcfc92f99f465e0db04264367)
+
+*See this article for more details - [!! vs. Boolean()](https://gist.github.com/arthurvi/66cb1e2bcfc92f99f465e0db04264367)*
 
 ---
 
@@ -202,7 +197,7 @@ if (typeof window !== undefined && !!window.location && !!window.location.href) 
 
 Classes in JavaScript are not pure Classes. They are a pseudo-class, just *syntactic sugar*. Although syntactically identical to the class signature of other languages, JavaScript classes are intrinsically different. When `Class` is used, JavaScript runs `Object` methods under-the-hood to create that "class."
 
-See this blog for more about under-the-hood for `Class` - [How JavaScript Classes Work Under the Hood](https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d)
+*See this article for more about under-the-hood for `Class` - [How JavaScript Classes Work Under the Hood](https://medium.com/siliconwat/how-javascript-classes-work-80b0cf483b1d)*
 
 For all components, we will use function components over Class ***in order to use Hooks***. 
 
@@ -217,7 +212,7 @@ The following reasons are from [React documentation](https://reactjs.org/docs/ho
 3. Classes confuse both people and machines
     - Hooks let you use more of React’s features without classes.
 
-See this documentation for more details about hooks - [Introducing Hooks - React](https://reactjs.org/docs/hooks-intro.html)
+*See this documentation for more details about hooks - [Introducing Hooks - React](https://reactjs.org/docs/hooks-intro.html)*
 
 ---
 
@@ -274,7 +269,7 @@ const Plan = () => {
 }
 ```
 
-See this article below for more details - [Function forms](https://kentcdodds.com/blog/function-forms)
+*See this article for more details - [Function forms](https://kentcdodds.com/blog/function-forms)*
 
 ---
 
@@ -399,9 +394,11 @@ This is a question of using `async/await` vs. `then/catch` for making API calls.
 Both methods do the same thing, but using `async/await` gives better flow control and leads to cleaner code and keeps it reading synchronously. 
 
 In addition, we want to avoid *callback hell* that can potentially come with `then/catch`
+
 *See this video for more about using `async/await` - [Async + Await in JavaScript, talk from Wes Bos](https://www.youtube.com/watch?v=DwQJ_NPQWWo)*
 
 When making multiple, independent API calls, we can batch them together by using `Promise.all` with `async/await`
+
 *See this article for more details - [Async Await vs then/catch](https://medium.com/@dio.hamidou/async-await-vs-then-catch-4f64d42e6392)*
 
 **Do:**
@@ -454,7 +451,7 @@ if (!stateFromParent) {
 }
 ```
 
-See the article for more details - [Use ternaries rather than && in JSX](https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx)
+*See this article for more details - [Use ternaries rather than && in JSX](https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx)*
 
 `Boolean(array.length) && <Component />` or `array.length > 0 && <Component />` can solve this issue but we prefer to be *explicit but verbose* for readability and maintainability. 
 
@@ -484,7 +481,7 @@ function Plan () {
   return (
     { 
       array.length 
-        ?	<PlanDays />
+        ? <PlanDays />
         : null
     }
   )
@@ -551,6 +548,6 @@ function Plan ({
 
 # Naming
 
-We follow the naming convention set in this guide - [GitHub - kettanaito/naming-cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
+Follow the naming convention set in this guide - [GitHub - kettanaito/naming-cheatsheet](https://github.com/kettanaito/naming-cheatsheet)
 
 ---
