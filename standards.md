@@ -3,8 +3,8 @@
 # **Table of Contents**
 1. [Introduction](#Introduction)
 2. [Imports](#Imports)
-3. [JS/JSX Operators](#JS/JSXOperators)
-4. [Function Components](#FunctionComponents)
+3. [JS/JSX Operators](#JS/JSX-Operators)
+4. [Function Components](#Function-Components)
 
 # Introduction
 
