@@ -234,22 +234,22 @@ For every other cases, we use a ***function declaration***. The reason for using
 
 **Do:**
 
-```jsx
+```
 function Plan() { 
-const [state, setState] = React.useState(() => window.localStorage('state'))
+	const [state, setState] = React.useState(() => window.localStorage('state'))
 	
-function handleClick(event) {
-// handle the click event
-}
+	function handleClick(event) {
+		// handle the click event
+	}
 
-return (
-	<>
-		<PlanContainer />
-		<Button
-			onClick={handleClick}
-		/>
-	</>
-)
+	return (
+		<>
+			<PlanContainer />
+			<Button
+				onClick={handleClick}
+			/>
+		</>
+	)
 }
 ```
 
