@@ -1,6 +1,7 @@
 *“All code in any code-base should look like a single person typed it, no matter how many people contributed.” -Confucius*
 
-**Table of Contents**
+# **Table of Contents**
+1. [Imports](#Imports)
 
 # Introduction
 
