@@ -1,10 +1,16 @@
-*“All code in any code-base should look like a single person typed it, no matter how many people contributed.” -Confucius*
+*“All code in any code-base should look like a single person typed it, no matter how many people contributed.”*
 
 # **Table of Contents**
 1. [Introduction](#Introduction)
 2. [Imports](#Imports)
-3. [JS/JSX Operators](#JS/JSX-Operators)
+3. [JS & JSX Operators](#JS-&-JSX-Operators)
 4. [Function Components](#Function-Components)
+5. [Function Forms](#Function-Forms)
+6. [React Hooks](#React-Hooks)
+7. [Asynchronus Functions](#Asynchronous-Functions)
+8. [Conditional Rendering](#Conditional-Rendering)
+9. [Alphabetization](#Alphabetization)
+10. [Naming](#Naming)
 
 # Introduction
 
@@ -80,7 +86,7 @@ import { Route, useParams } from 'react-router-dom'
 
 ---
 
-# JS/JSX Operators
+# JS & JSX Operators
 
 Use `Boolean()` over `!!` for explicit readability.
 
